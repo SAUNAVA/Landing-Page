@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login</title>
+      <link rel="stylesheet" href="Register_styles.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Login Form
+         </div>
+         <form id="loginForm">
+            <div class="field">
+               <input type="email" id="email" required>
+               <label>Email Address</label>
+            </div>
+            <div class="field">
+               <input type="password" id="password" required>
+               <label>Password</label>
+            </div>
+            <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+               </div>
+               <div class="pass-link">
+                  <a href="#" class="pass-link" id="forgotPassword">Forgot password?</a>
+               </div>
+            </div>
+            <div class="field">
+               <input type="submit" value="Login">
+            </div>
+            
+         </form>
+      </div>
+
+      <script>
+         document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            
+            if (email === "saunava1768@gmail.com" && password === "Saunava123") {
+               
+               window.location.href = "index.html";
+               
+               alert("Login Successful! Enjoy shopping.");
+            } else {
+               
+               alert("Invalid email or password. Please try again.");
+            }
+         });
+         document.querySelector(".pass-link a").addEventListener("click", function(event) {
+            event.preventDefault();
+            // Display custom hint message
+            alert("Your name followed by first three digits in numerics");
+         });
+      </script>
+   </body>
+</html>
